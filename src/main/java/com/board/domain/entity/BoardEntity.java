@@ -5,9 +5,11 @@ import lombok.*;
 
 import javax.persistence.*;
 
+import com.board.dto.BoardDto;
+
 @NoArgsConstructor(access= AccessLevel.PROTECTED)
 @Getter
-@Setter
+// @Setter // 모든 세터는 엔티티 내 메소드로 처리
 @Table(name="board")
 @Entity
 public class BoardEntity extends TimeEntity {
@@ -25,10 +27,17 @@ public class BoardEntity extends TimeEntity {
     private String content;
 
     @Builder
-    public BoardEntity(Long id, String title, String content, String writer) {
-        this.id = id;
+    public BoardEntity(String title, String content, String writer) {
         this.writer = writer;
         this.title = title;
         this.content = content;
+    }
+
+    public static BoardEntity create(BoardDto boardDto){
+        return new BoardEntity(
+            boardDto.getWriter(),
+            boardDto.getTitle(),
+            boardDto.getContent()
+        );
     }
 }

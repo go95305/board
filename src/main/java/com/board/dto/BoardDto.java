@@ -17,15 +17,15 @@ public class BoardDto {
     private LocalDateTime createdDate;
     private LocalDateTime modifiedDate;
 
-    public BoardEntity toEntity(){
-        BoardEntity boardEntity = BoardEntity.builder()
-                .id(id)
-                .writer(writer)
-                .title(title)
-                .content(content)
-                .build();
-        return boardEntity;
-    }
+    // public BoardEntity toEntity(){
+    //     BoardEntity boardEntity = BoardEntity.builder()
+    //             .id(id)
+    //             .writer(writer)
+    //             .title(title)
+    //             .content(content)
+    //             .build();
+    //     return boardEntity;
+    // }
 
     @Builder
     public BoardDto(Long id, String title, String content, String writer, LocalDateTime createdDate, LocalDateTime modifiedDate) {
@@ -35,5 +35,16 @@ public class BoardDto {
         this.content = content;
         this.createdDate = createdDate;
         this.modifiedDate = modifiedDate;
+    }
+
+    public static BoardDto from(BoardEntity entity){
+        return new BoardDto(
+            entity.getId(),
+            entity.getWriter(),
+            entity.getTitle(),
+            entity.getContent(),
+            entity.getCreatedDate(),
+            entity.getModifiedDate()
+        );
     }
 }
