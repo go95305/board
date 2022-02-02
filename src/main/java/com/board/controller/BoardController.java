@@ -62,9 +62,11 @@ public class BoardController {
     }
     
     @GetMapping("/")
-    public String list(Model model){
+    public String list(Model model,@RequestParam(value="page",defaultValue = "1")Integer pageNum){
         List<BoardDto> boardList = boardService.getBoardlist();
+        Integer[] pageList = boardService.getPageList(pageNum);
         model.addAttribute("boardList", boardList);
+        model.addAttribute("pageList", pageList);
         return "board/list.html";
     }
 
