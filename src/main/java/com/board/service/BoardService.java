@@ -62,4 +62,20 @@ public class BoardService {
     public Long savePost(BoardDto boardDto) {
         return boardRepository.save(BoardEntity.create(boardDto)).getId();
     }
+
+    @Transactional
+    public List<BoardDto> searchPosts(String keyword){
+        List<BoardEntity> boardEntities = boardRepository.findByTitleContaining(keyword);
+        List<BoardDto> boardDtoList = new ArrayList<>();
+
+        if(boardEntities.isEmpty()){
+            return boardDtoList;
+        }
+
+        for(BoardEntity boardEntity:boardEntities){
+            boardDtoList.add(BoardDto.from(boardEntity));
+        }
+
+        return boardDtoList;
+    }
 }
