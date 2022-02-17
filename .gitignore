@@ -12,3 +12,5 @@ src/main/resource/application.yml
 
 /build/
 /build/classes/java/main/
+
+# yml삭제 테스트
