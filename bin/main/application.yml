@@ -5,9 +5,9 @@ spring:
         enabled: true
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/board?serverTimezone=UTC&characterEncoding=UTF-8
-    username: root
-    password: root
+    url: jdbc:mysql://52.91.52.240:3306/board?serverTimezone=UTC&characterEncoding=UTF-8
+    username: kyc
+    password: Jack!3595
 
   jpa:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
