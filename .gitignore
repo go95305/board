@@ -7,7 +7,7 @@
 
 !gradle/wrapper/gradle-wrapper.jar
 # 해당주석 gitignore추가됬는지 확인(git 캐시를 삭제 git rm -r --cached)
-src/main/resource/application.yml
+# src/main/resource/application.yml
 # Project exclude paths
 
 /build/
