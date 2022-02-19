@@ -5,7 +5,7 @@ spring:
         enabled: true
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://52.91.52.240:3306/board?serverTimezone=UTC&characterEncoding=UTF-8
+    url: jdbc:mysql://34.229.193.251:3306/board?serverTimezone=UTC&characterEncoding=UTF-8
     username: kyc
     password: Jack!3595
 
