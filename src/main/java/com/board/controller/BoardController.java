@@ -43,7 +43,7 @@ public class BoardController {
         model.addAttribute("boardDto", boardDTO);
         return "board/detail.html";
     }
-
+//dsf
     @PutMapping("/post/edit/{id}")
     public String update(BoardDto boardDTO) {
         boardService.savePost(boardDTO);
