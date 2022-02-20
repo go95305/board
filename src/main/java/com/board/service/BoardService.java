@@ -96,10 +96,12 @@ public class BoardService {
         return pageList;
     }
 
+    // 새로운 게시글을 올리면 새로올린글을 그대로 리턴해준다.
     @Transactional
-    public Long savePost(BoardDto boardDto) {
-        return boardRepository.save(BoardEntity.create(boardDto)).getId();
-    }
+    public BoardDto savePost(BoardDto boardDto) {
+        boardRepository.save(BoardEntity.create(boardDto)).getId();
+        return boardDto;
+        }
 
     @Transactional
     public List<BoardDto> searchPosts(String keyword){

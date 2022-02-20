@@ -26,6 +26,12 @@ public class BoardEntity extends TimeEntity {
     @Column(columnDefinition = "TEXT", nullable = false)
     private String content;
 
+    @Column(columnDefinition = "BOOLEAN default false", nullable = false)
+    private Boolean isDeleted;
+
+    @Column(columnDefinition = "BOOLEAN default false", nullable = false)
+    private Boolean isUpdated;
+
     @Builder
     public BoardEntity(String title, String content, String writer) {
         this.writer = writer;
